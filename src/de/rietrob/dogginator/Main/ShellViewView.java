@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.Font;
 import java.awt.Color;
@@ -25,6 +26,8 @@ public class ShellViewView extends JFrame {
 	
 	public ShellViewView() {
         initComponents();
+        //getContentPane().remove(pan_content);
+        
     }
     
     private void initComponents() {
@@ -201,7 +204,10 @@ public class ShellViewView extends JFrame {
     public javax.swing.JButton getOvervievButton(){
         return btn_overview;
     }
-    public javax.swing.JPanel getContentPanel(){
+    public JPanel getContentPanel () {
     	return pan_content;
+    }
+    public void setContentPanel(JPanel content) {
+    	pan_content = content;
     }
 }
