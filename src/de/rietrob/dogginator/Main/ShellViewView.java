@@ -26,6 +26,8 @@ public class ShellViewView extends JFrame {
 	
 	public ShellViewView() {
         initComponents();
+        //getContentPane().remove(pan_content);
+        
     }
     
     private void initComponents() {
@@ -202,11 +204,16 @@ public class ShellViewView extends JFrame {
     public javax.swing.JButton getOvervievButton(){
         return btn_overview;
     }
-    public javax.swing.JPanel getContentPanel(){
+    public JPanel getContentPanel () {
     	return pan_content;
     }
+<<<<<<< HEAD
     public void setContentPanel(JPanel pan){
     	this.pan_content = pan;
     	
+=======
+    public void setContentPanel(JPanel content) {
+    	pan_content = content;
+>>>>>>> ccb03f400674bfe00ada0b166ce87110b4210f8b
     }
 }
