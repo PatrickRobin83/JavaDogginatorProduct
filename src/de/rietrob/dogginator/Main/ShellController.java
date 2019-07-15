@@ -12,10 +12,6 @@
  */
 package de.rietrob.dogginator.Main;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -53,24 +49,14 @@ public class ShellController {
             @Override
             public void actionPerformed(ActionEvent e){
                 System.out.println("Übersicht laden");
-<<<<<<< HEAD
                 System.out.println(_shellView.getContentPanel());
                 _shellView.setContentPanel(_overview.getOverviewView());
                 _shellView.add(_shellView.getContentPanel());
                 
                 
-=======
-                _shellView.getContentPanel().setVisible(false);//(_shellView.getContentPanel());
-                _shellView.setContentPanel(_overview.getOverviewView());
-                _shellView.getContentPanel().setVisible(true);
->>>>>>> ccb03f400674bfe00ada0b166ce87110b4210f8b
                 
-                //_shellView.setContentPanel(_overview.getOverviewView());
-                //_shellView.getContentPane().add(_shellView.getContentPanel());
-                //_shellView.getContentPane().setVisible(true);
-                //_shellView.getContentPane().revalidate();
-                _shellView.repaint();
                 
+               
             }
     }
     

@@ -28,12 +28,8 @@ public class OverviewView extends JPanel {
 		add(lbl_headline);
 		Color bg = Color.black;
 		this.setBackground(bg);
-<<<<<<< HEAD
 		this.updateUI();
 		this.setVisible(true);
-=======
-		
->>>>>>> ccb03f400674bfe00ada0b166ce87110b4210f8b
 	}
 	
 }

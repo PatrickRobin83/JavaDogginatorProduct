@@ -30,7 +30,7 @@ public class OverviewController {
 	}
 	
 	public JPanel getOverviewView() {
-		return this._overView;
+		return _overView;
 	}
 	
 	
