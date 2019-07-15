@@ -49,8 +49,11 @@ public class ShellController {
             @Override
             public void actionPerformed(ActionEvent e){
                 System.out.println("Übersicht laden");
-                _shellView.getContentPanel().removeAll();
-                _shellView.getContentPanel().add(_overview.getOverviewView());
+                System.out.println(_shellView.getContentPanel());
+                _shellView.setContentPanel(_overview.getOverviewView());
+                _shellView.add(_shellView.getContentPanel());
+                
+                
                 
                 
                

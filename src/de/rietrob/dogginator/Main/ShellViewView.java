@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.Font;
 import java.awt.Color;
@@ -203,5 +204,9 @@ public class ShellViewView extends JFrame {
     }
     public javax.swing.JPanel getContentPanel(){
     	return pan_content;
+    }
+    public void setContentPanel(JPanel pan){
+    	this.pan_content = pan;
+    	
     }
 }

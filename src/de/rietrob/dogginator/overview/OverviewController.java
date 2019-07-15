@@ -12,6 +12,8 @@
  */
 package de.rietrob.dogginator.overview;
 
+import java.awt.Dimension;
+
 import javax.swing.JPanel;
 
 public class OverviewController {
@@ -20,6 +22,11 @@ public class OverviewController {
 	
 	public OverviewController() {
 		this._overView = new OverviewView();
+		_overView.setVisible(true);
+		_overView.setEnabled(true);
+		Dimension dim = new Dimension(1236, 842);
+		_overView.setPreferredSize(dim);
+		
 	}
 	
 	public JPanel getOverviewView() {
