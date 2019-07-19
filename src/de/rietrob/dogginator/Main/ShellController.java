@@ -15,6 +15,9 @@ package de.rietrob.dogginator.Main;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JPanel;
+
+import de.rietrob.dogginator.Library.GlobalConfig;
 import de.rietrob.dogginator.overview.OverviewController;
 
 public class ShellController {
@@ -25,7 +28,6 @@ public class ShellController {
     public ShellController(){
         this._shellView = new ShellViewView();
         addListener();
-        _shellView.getOvervievButton().setEnabled(true);
         _overview = new OverviewController();
     }
     
@@ -48,12 +50,8 @@ public class ShellController {
     class OverViewListener implements ActionListener{
             @Override
             public void actionPerformed(ActionEvent e){
-                System.out.println("Übersicht laden");
-                _shellView.getContentPanel().removeAll();
-                _shellView.getContentPanel().add(_overview.getOverviewView());
-                
-                
-               
+            	
+            	GlobalConfig.getInstance().changeView(_shellView.getContentPanel(), _overview.getOverviewView());
             }
     }
     

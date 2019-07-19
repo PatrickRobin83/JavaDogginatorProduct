@@ -16,9 +16,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.Font;
 import java.awt.Color;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Dimension;
+import java.awt.CardLayout;
 
 @SuppressWarnings("serial")
 public class ShellViewView extends JFrame {
@@ -28,8 +33,6 @@ public class ShellViewView extends JFrame {
     }
     
     private void initComponents() {
-
-        pan_content = new javax.swing.JPanel();
         pan_MainMenu = new javax.swing.JPanel();
         btn_exit = new javax.swing.JButton();
         btn_overview = new javax.swing.JButton();
@@ -45,30 +48,6 @@ public class ShellViewView extends JFrame {
         setTitle("Dogginator");
         setPreferredSize(new java.awt.Dimension(1236, 842));
         setResizable(false);
-
-        pan_content.setPreferredSize(new java.awt.Dimension(1236, 842));
-        
-        JLabel lblShellviewpanel = new JLabel("ShellViewPanel");
-        lblShellviewpanel.setForeground(Color.WHITE);
-        lblShellviewpanel.setFont(new Font("Tahoma", Font.PLAIN, 40));
-
-        javax.swing.GroupLayout pan_contentLayout = new javax.swing.GroupLayout(pan_content);
-        pan_contentLayout.setHorizontalGroup(
-        	pan_contentLayout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(pan_contentLayout.createSequentialGroup()
-        			.addGap(386)
-        			.addComponent(lblShellviewpanel)
-        			.addContainerGap(704, Short.MAX_VALUE))
-        );
-        pan_contentLayout.setVerticalGroup(
-        	pan_contentLayout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(pan_contentLayout.createSequentialGroup()
-        			.addGap(334)
-        			.addComponent(lblShellviewpanel)
-        			.addContainerGap(425, Short.MAX_VALUE))
-        );
-        pan_content.setBackground(Color.red);
-        pan_content.setLayout(pan_contentLayout);
 
         btn_exit.setText("Beenden");
 
@@ -131,27 +110,58 @@ public class ShellViewView extends JFrame {
                 .addComponent(btn_exit)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
+        
+        
+        pan_shellViewMainContentDisplayArea = new JPanel();
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(pan_MainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pan_content, javax.swing.GroupLayout.PREFERRED_SIZE, 1136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        			.addComponent(pan_MainMenu, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(pan_shellViewMainContentDisplayArea, GroupLayout.DEFAULT_SIZE, 1051, Short.MAX_VALUE)
+        			.addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(pan_content, javax.swing.GroupLayout.DEFAULT_SIZE, 802, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pan_MainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(pan_shellViewMainContentDisplayArea, GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE)
+        					.addGap(11))
+        				.addComponent(pan_MainMenu, GroupLayout.DEFAULT_SIZE, 853, Short.MAX_VALUE)))
         );
+        pan_shellViewMainContentDisplayArea.setLayout(new CardLayout(0, 0));
+        
+        pan_content = new JPanel();
+        pan_content.setPreferredSize(new Dimension(100, 100));
+        pan_content.setName("Das ist das ContentPanel");
+        pan_content.setBackground(Color.RED);
+        pan_shellViewMainContentDisplayArea.add(pan_content, "name_24939871190100");
+        
+        label = new JLabel("ShellViewPanel");
+        label.setForeground(Color.WHITE);
+        label.setFont(new Font("Tahoma", Font.PLAIN, 40));
+        GroupLayout gl_pan_content = new GroupLayout(pan_content);
+        gl_pan_content.setHorizontalGroup(
+        	gl_pan_content.createParallelGroup(Alignment.LEADING)
+        		.addGap(0, 119, Short.MAX_VALUE)
+        		.addGroup(gl_pan_content.createSequentialGroup()
+        			.addGap(386)
+        			.addComponent(label)
+        			.addContainerGap(488, Short.MAX_VALUE))
+        );
+        gl_pan_content.setVerticalGroup(
+        	gl_pan_content.createParallelGroup(Alignment.LEADING)
+        		.addGap(0, 169, Short.MAX_VALUE)
+        		.addGroup(gl_pan_content.createSequentialGroup()
+        			.addGap(334)
+        			.addComponent(label)
+        			.addContainerGap(390, Short.MAX_VALUE))
+        );
+        pan_content.setLayout(gl_pan_content);
+        getContentPane().setLayout(layout);
 
         pack();
     }
@@ -167,7 +177,9 @@ public class ShellViewView extends JFrame {
     private javax.swing.JButton btn_manageProducts;
     private javax.swing.JButton btn_overview;
     private javax.swing.JPanel pan_MainMenu;
-    private javax.swing.JPanel pan_content;
+    private javax.swing.JPanel pan_shellViewMainContentDisplayArea;
+    private JPanel pan_content;
+    private JLabel label;
     // End of variables declaration//GEN-END:variables
     
     public void OpenOverviewListener (ActionListener OpenOverview){
@@ -202,6 +214,6 @@ public class ShellViewView extends JFrame {
         return btn_overview;
     }
     public javax.swing.JPanel getContentPanel(){
-    	return pan_content;
+    	return pan_shellViewMainContentDisplayArea;
     }
 }

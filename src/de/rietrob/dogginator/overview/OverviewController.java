@@ -20,6 +20,7 @@ public class OverviewController {
 	
 	public OverviewController() {
 		this._overView = new OverviewView();
+		_overView.setVisible(true);
 	}
 	
 	public JPanel getOverviewView() {
