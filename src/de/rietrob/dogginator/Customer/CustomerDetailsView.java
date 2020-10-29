@@ -14,6 +14,7 @@ package de.rietrob.dogginator.Customer;
 
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class CustomerDetailsView extends JPanel {
 	
 }

@@ -12,6 +12,20 @@
  */
 package de.rietrob.dogginator.Customer;
 
+import javax.swing.JPanel;
+
 public class ManageCustomerController {
+	
+private ManageCustomerView _manageCustomerView;
+	
+	public ManageCustomerController() {
+	
+		this._manageCustomerView = new ManageCustomerView();
+		_manageCustomerView.setVisible(true);
+	}
+	
+	public JPanel getManageCustomerView() {
+		return _manageCustomerView;
+	}
 	
 }

@@ -15,8 +15,7 @@ package de.rietrob.dogginator.Main;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JPanel;
-
+import de.rietrob.dogginator.Customer.ManageCustomerController;
 import de.rietrob.dogginator.Library.GlobalConfig;
 import de.rietrob.dogginator.overview.OverviewController;
 
@@ -24,11 +23,14 @@ public class ShellController {
 	
 	private ShellViewView _shellView;
 	private OverviewController _overview;
+	private ManageCustomerController _manageCustomerController;
 	
     public ShellController(){
         this._shellView = new ShellViewView();
         addListener();
         _overview = new OverviewController();
+        _manageCustomerController = new ManageCustomerController();
+        GlobalConfig.getInstance().changeView(_shellView.getContentPanel(), _overview.getOverviewView());
     }
     
     public void showShellView(){
@@ -58,6 +60,7 @@ public class ShellController {
     class ManageCustomerListener implements ActionListener{
             @Override
             public void actionPerformed(ActionEvent e){
+            	GlobalConfig.getInstance().changeView(_shellView.getContentPanel(), _manageCustomerController.getManageCustomerView());
                 System.out.println("Kunden Verwaltung laden");
             }
     }

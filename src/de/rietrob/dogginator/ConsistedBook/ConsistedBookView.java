@@ -14,6 +14,7 @@ package de.rietrob.dogginator.ConsistedBook;
 
 import javax.swing.JPanel;
 
+@SuppressWarnings({ "serial" })
 public class ConsistedBookView extends JPanel {
 	
 }

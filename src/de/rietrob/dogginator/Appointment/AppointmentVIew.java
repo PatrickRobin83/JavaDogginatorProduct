@@ -12,8 +12,7 @@
  */
 package de.rietrob.dogginator.Appointment;
 
-import javax.swing.JPanel;
 
-public class AppointmentVIew extends JPanel {
+public class AppointmentVIew{
 	
 }

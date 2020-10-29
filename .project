@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/de/rietrob/dogginator/Main/DogginatorDB</name>
-			<type>1</type>
-			<location>D:/SourceCode/VisualStudio/Dogginator_Product/Dogginator/DoggiNator.db</location>
-		</link>
-	</linkedResources>
 </projectDescription>
